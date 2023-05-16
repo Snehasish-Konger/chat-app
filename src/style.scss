@@ -25,13 +25,15 @@
     background-color: white;
     padding: 20px 60px;
     border-radius: 10px;
+    border: 1px solid #2a2a2a;
+    box-shadow: 5px 5px 0px 0px #2a2a2a;
     display: flex;
     flex-direction: column;
     gap: 10px;
     align-items: center;
 
     .logo {
-      color: #5d5b8d;
+      color: #4d49b7;
       font-weight: bold;
       font-size: 24px;
 
