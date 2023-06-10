@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import { client } from "../appwrite";
+import { account } from "../appwrite";
 
 export const AuthContext = createContext();
 
@@ -9,18 +9,19 @@ export const AuthContextProvider = ({ children }) => {
   useEffect(() => {
     const checkCurrentUser = async () => {
       try {
-        const { data } = await client.account.get();
-        setCurrentUser(data);
+        const { name } = await account.get();
+        setCurrentUser(name);
       } catch (error) {
+        console.error("Failed to get current user:", error);
         setCurrentUser(null);
       }
     };
 
     checkCurrentUser();
   }, []);
-
+  
   return (
-    <AuthContext.Provider value={{ currentUser }}>
+    <AuthContext.Provider value={{ currentUser, setCurrentUser }}>
       {children}
     </AuthContext.Provider>
   );
