@@ -3,7 +3,7 @@ import { Client, Account, Databases, Storage, ID} from "appwrite";
 
 // Initialize the Appwrite client
 const client = new Client();
-client.setEndpoint("https://chat.scientyficworld.org/v1").setProject("6461d82f63ac2b3f1097");
+client.setEndpoint("https://cloud.appwrite.io/v1").setProject("6461d82f63ac2b3f1097");
 
 // Initialize the Appwrite services
 const db = new Databases(client, "646465df50494559619c");
